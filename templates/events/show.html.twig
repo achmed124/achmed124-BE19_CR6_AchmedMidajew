@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Events{% endblock %}
+
+{% block body %}
+<div class="bg-secondary">
+    <h1 class="fw-bold text-center py-3">Event</h1>
+
+    <div class="bg-dark container p-3">
+        <div class="bg-secondary text-light m-4">
+            <div class="m-4 py-3">
+                <div class="text-center mb-4">
+                    <img src='{{ event.image }}' class='' alt='...' style="width: 400px; height: 250px">
+                </div>
+                <p class="text-dark fw-bold fs-4">Name</p>
+                <p>{{ event.name }}</p>
+                <p class="text-dark fw-bold fs-4">Date_start</p>
+                <p>{{ event.dateStart ? event.dateStart|date('Y-m-d H:i:s') : '' }}</p>
+                <p class="text-dark fw-bold fs-4">Description</p>
+                <p>{{ event.description }}</p>
+                <p class="text-dark fw-bold fs-4">Image</p>
+                <p>{{ event.image }}</p>
+                <p class="text-dark fw-bold fs-4">Capacity</p>
+                <p>{{ event.capacity }}</p>
+                <p class="text-dark fw-bold fs-4">Email</p>
+                <p>{{ event.email }}</p>
+                <p class="text-dark fw-bold fs-4">Phone</p>
+                <p>{{ event.phone }}</p>
+                <p class="text-dark fw-bold fs-4">Address</p>
+                <p>{{ event.address }}</p>
+                <p class="text-dark fw-bold fs-4">URL</p>
+                <p>{{ event.URL }}</p>
+                <p class="text-dark fw-bold fs-4">Type</p>
+                <p>{{ event.type }}</p>
+            </div>
+        </div>
+        <div class="pb-4 mb-4">
+            <a href="{{ path('app_events_index') }}" class="btn btn-primary p-3">back to list</a>
+            <a class="btn btn-danger p-2">{{ include('events/_delete_form.html.twig')}}</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Events{% endblock %}
+
+{% block body %}
+    <div class="bg-secondary">
+        <h1 class="fw-bold text-center pt-2">Edit Events</h1>
+        <div class="bg-secondary py-3">
+            <div class="navbar-dark bg-dark text-white container">
+                {{ include('events/_form.html.twig', {'button_label': 'Update'}) }}
+                <a class="btn btn-danger p-1 mb-3">{{ include('events/_delete_form.html.twig')}}</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

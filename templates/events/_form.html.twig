@@ -1,0 +1,7 @@
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <div class="pb-3">
+        <button class="btn btn-success">{{ button_label|default('Save') }}</button>
+        <a href="{{ path('app_events_index') }}" class="btn btn-primary">back to list</a>
+    </div>
+{{ form_end(form) }}
